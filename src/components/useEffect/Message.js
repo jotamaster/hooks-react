@@ -2,10 +2,14 @@ import React, { useEffect } from 'react'
 
 export const Message = () => {
 
+    const mouseMove = ({x,y})=>{
+        console.log({x,y})
+    }
+
     useEffect(() => {
-        console.log('componente montado')
+        window.addEventListener('mouseover',mouseMove) 
         return () => {
-            console.log('componente desmontado')
+            window.removeEventListener('mouseover',mouseMove)
         }
     }, [])
 
